@@ -1,0 +1,37 @@
+
+<h1>User info</h1>
+
+<% if profile.image.attached? %>
+    <%= image_tag user.image, size: "100x100" %>
+<% else %>
+    <%= image_tag 'no_image', size: "100x100" %>
+<% end %>
+
+<p>name</p>
+               
+<p>introduction</p>
+        
+<h1>New book</h1>
+
+<%= form_with model: @Book do |f| %>
+    <p>Title</p>
+    <%= f.text_area :title %>
+    
+    <p>Opinion</p>
+    <%= f.text_area :body %>
+    
+    <%= f.submit "Create Book" %>
+<% end %>
+
+<h2>Books</h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+    </tr>
+    
+    <%= @books.each do |book| %>
+    <% end %>
+</table>
