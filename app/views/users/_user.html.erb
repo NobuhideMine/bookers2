@@ -1,20 +1,20 @@
-<div class="col-3">
+        <div class="col-3">
             <h1>User info</h1>
-            <%= image_tag user.get_profile_image(100,100) %> 
+            <%= image_tag users.get_profile_image(100,100) %> 
             <table>
                 
                     <tr>
                         <td>name</td>
-                        <td><%= user.name %></td>
+                        <td><%= users.name %></td>
                     </tr>
                     <tr>
                         <td>introduction</td>
-                        <td><%= user.introduction %></td>
+                        <td><%= users.introduction %></td>
                     </tr>
                
             </table>
             
-            <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary" do %>
+            <%= link_to edit_user_path(users.id), class: "btn btn-outline-secondary" do %>
             <i class="fa-solid fa-user-gear"></i>
             <% end %>
             
@@ -30,3 +30,4 @@
                 <%= f.submit "Create Book" %>
             <% end %>
         </div>
+
