@@ -1,4 +1,18 @@
 <div class="col-3">
+            
+            <div>
+                <%= flash[:notice] %>
+            </div>
+            
+            <% if @book.errors.any? %>
+              <%= @book.errors.count %>件のエラーが発生しました
+              <ul>
+                <% @book.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            
             <h1>User info</h1>
             <%= image_tag user.get_profile_image(100,100) %> 
             <table>
