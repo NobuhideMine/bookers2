@@ -14,13 +14,13 @@
   <body>
     
     <header>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav class="navbar navbar-expand-lg mr-auto navbar-dark bg-dark">
         <div class="container"> 
           
             <a class="navbar-brand p-3" href="/">Bookers</a>
           <% if user_signed_in? %>
             <ul class="navbar-nav">
-              <li class="nav-item"><a href ="/"><i class="fa-solid fa-house"></i>Home</a></li>
+              <li class="nav-item"><i class="fa-solid fa-house"></i><%= link_to "Home", user_path(current_user) %></a></li>
               <li class="nav-item"><a href ="/users"><i class="fa-solid fa-users"></i>Users</a></li>
               <li class="nav-item"><a href ="/books"><i class="fa-solid fa-book-open"></i>Books</a></li>
               <li class="nav-item"><i class="fa-solid fa-right-from-bracket"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
@@ -29,7 +29,7 @@
             
             <ul class="navbar-nav">
               <li class="nav-item"><a href ="/"><i class="fa-solid fa-house"></i>Home</a></li>
-              <li class="nav-item"><a href ="/homes/about"><i class="fa-solid fa-link"></i>About</a></li>
+              <li class="nav-item"><i class="fa-solid fa-link"><%= link_to "About", about_path %></i></li>
               <li class="nav-item"><a href ="/users/sign_up"><i class="fa-solid fa-user-plus"></i>Sign up</a></li>
               <li class="nav-item"><a href ="/users/sign_in"><i class="fa-solid fa-right-to-bracket"></i>Log in</a></li>
               

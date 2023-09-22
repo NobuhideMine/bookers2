@@ -1,4 +1,4 @@
-        <div class="col-3">
+        <div class="col-md-3">
             
             <div><%= flash[:notice] %></div>
             
@@ -17,8 +17,8 @@
                
             </table>
             
-            <%= link_to edit_user_path(users.id), class: "btn btn-outline-secondary" do %>
-            <i class="fa-solid fa-user-gear"></i>
+            <%= link_to edit_user_path(users.id), class: "btn btn-block btn-outline-secondary" do %>
+                <i class="fa-solid fa-user-gear"></i>
             <% end %>
             
             <h1>New book</h1>
