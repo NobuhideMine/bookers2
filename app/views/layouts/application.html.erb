@@ -17,21 +17,59 @@
      <nav class="navbar navbar-expand-lg mr-auto navbar-dark bg-dark">
         <div class="container"> 
           
-            <a class="navbar-brand p-3" href="/">Bookers</a>
+            <%= link_to root_path do %>
+              Bookers
+            <% end %>
+            <!--<a class="navbar-brand p-3" href="/">Bookers</a>-->
           <% if user_signed_in? %>
             <ul class="navbar-nav">
-              <li class="nav-item"><i class="fa-solid fa-house"></i><%= link_to "Home", user_path(current_user) %></a></li>
-              <li class="nav-item"><a href ="/users"><i class="fa-solid fa-users"></i>Users</a></li>
-              <li class="nav-item"><a href ="/books"><i class="fa-solid fa-book-open"></i>Books</a></li>
-              <li class="nav-item"><i class="fa-solid fa-right-from-bracket"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+              <li class="nav-item">
+                  <%= link_to user_path(current_user) do %>
+                    <i class="fa-solid fa-home"></i>Home
+                  <% end %>
+              </li>
+              
+              <li class="nav-item">
+                  <%= link_to users_path do %>
+                    <i class="fa-solid fa-users"></i>Users
+                  <% end %>
+              </li>
+              
+              <li class="nav-item">
+                  <%= link_to books_path do %>
+                    <i class="fa-solid fa-book-open"></i>Books
+                  <% end %>
+              </li>
+              
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa-solid fa-sign-out-alt"></i>Log out
+                <% end %>
+              </li>
             </ul>
           <% else %>
             
             <ul class="navbar-nav">
-              <li class="nav-item"><a href ="/"><i class="fa-solid fa-house"></i>Home</a></li>
-              <li class="nav-item"><i class="fa-solid fa-link"><%= link_to "About", about_path %></i></li>
-              <li class="nav-item"><a href ="/users/sign_up"><i class="fa-solid fa-user-plus"></i>Sign up</a></li>
-              <li class="nav-item"><a href ="/users/sign_in"><i class="fa-solid fa-right-to-bracket"></i>Log in</a></li>
+              <li class="nav-item">
+                <%= link_to root_path do %>
+                  <i class="fa-solid fa-home"></i>Home
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to about_path do %>
+                  <i class="fa-solid fa-link"></i>About
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  new_user_registration_path do %>
+                  <i class="fa-solid fa-user-plus"></i>Sign up
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  new_user_session_path do %>
+                  <i class="fa-solid fa-sign-in-alt"></i>Log in
+                <% end %>
+              </li>
               
             </ul>
           <% end %>

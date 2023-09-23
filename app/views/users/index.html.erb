@@ -1,19 +1,18 @@
 <div class="container">
     <div class="row">
         
-        <%= render 'user', users: @users, book: @book %>
+        <%= render 'books/book', user: @user, book: @book %>
         
         <div class="col-md-8 offset-md-1">
             <h1>Users</h1>
             <table class="table"> 
-                
                     <tr>
                         <td>image</td>
                         <td>name</td>
                         <td></td>
                     </tr>
             
-                <% @user.each do |user| %>
+                <% @users.each do |user| %>
                     <tr>
                         <td><%= image_tag user.get_profile_image(100,100) %></td>
                         <td><%= user.name %></td>
