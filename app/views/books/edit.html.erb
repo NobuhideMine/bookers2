@@ -2,18 +2,16 @@
     <div class="row ">
         <div class="col-md-8 mx-auto">
             <h1>Editing Book</h1>
-
-            <% if @book.errors.any? %>
-                <%= @book.errors.count %>errors prohibited book from being saved:
-                    <ul>
-                        <% @book.errors.full_messages.each do |message| %>
-                            <li><%= message %></li>
-                        <% end %>
-                    </ul>
-            <% end %>
-
+    
             <%= form_with model: @book do |f| %>
-                
+                <% if @book.errors.any? %>
+                    <%= @book.errors.count %>errors prohibited book from being saved:
+                        <ul>
+                            <% @book.errors.full_messages.each do |message| %>
+                                <li><%= message %></li>
+                            <% end %>
+                        </ul>
+                <% end %>    
                 <div class="form-group">
                     <p>Title</p>
                     <%= f.text_field :title %>
